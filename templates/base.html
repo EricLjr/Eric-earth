@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/static/css/theme/{{ blog.theme }}.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/css/detail.css">
+    <link rel="icon" href="/static/image/mingren.ico" type="image/x-icon">
+</head>
+<body>
+<div class="header">
+    <p class="title">{{ blog.title }}</p>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+    {% load blogtags %}
+    {% easy_query username%}
+        {% block ret %}
+
+        {% endblock %}
+    </div>
+</div>
+
+
+</body>
+</html>

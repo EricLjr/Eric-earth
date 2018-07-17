@@ -1,0 +1,35 @@
+  <div class="col-md-3">
+            <div class="left_region">
+                 <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">博客分类</h3>
+                </div>
+                <div class="panel-body">
+                    {% for category in category_list %}
+                        <li><a href="/{{ username }}/category/{{ category.title }}">{{ category.title }}&nbsp;({{ category.article_set.count }})</a></li>
+                    {% endfor %}
+                </div>
+            </div>
+                 <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">博客标签</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% for tag in tag_list %}
+                        <li><a href="/{{ username }}/tag/{{ tag.title }}">{{ tag.title }}&nbsp;({{ tag.article_set.count }})</a></li>
+                    {% endfor %}
+                    </div>
+                </div>
+                 <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">日期归档</h3>
+                    </div>
+                    <div class="panel-body">
+                       {% for date in date_list %}
+                        <li><a href="http://127.0.0.1:8010/{{ username }}/date/{{ date.0 }}">{{ date.0 }}({{ date.1 }})</a></li>
+                       {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
